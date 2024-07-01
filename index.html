@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat App</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    #chat { border: 1px solid #ccc; padding: 10px; width: 300px; height: 400px; overflow-y: scroll; }
+    #message { width: calc(100% - 52px); }
+    .message { padding: 5px 10px; border-radius: 10px; margin: 5px; width: fit-content; }
+    .my-message { background-color: green; color: white; align-self: flex-end; }
+    .other-message { background-color: blue; color: white; align-self: flex-start; }
+    #chatContainer { display: flex; flex-direction: column; }
+  </style>
+</head>
+<body>
+  <div>
+    <input type="text" id="username" placeholder="Enter username">
+    <input type="text" id="roomID" placeholder="Enter room ID">
+    <button onclick="joinRoom()">Join Room</button>
+    <button onclick="leaveRoom()">Leave Room</button>
+  </div>
+  <div id="chatContainer">
+    <div id="chat"></div>
+  </div>
+  <input type="text" id="message" placeholder="Enter message">
+  <button onclick="sendMessage()">Send</button>
+  <input type="file" id="fileInput">
+  <button onclick="uploadFile()">Upload File</button>
+
+  <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>
